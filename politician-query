@@ -1,0 +1,11 @@
+SELECT ?item ?itemLabel ?date_of_birth ?sex_or_genderLabel ?image ?occupation ?occupationLabel ?educated_at ?educated_atLabel ?academic_degree ?academic_degreeLabel ?start_time ?end_time ?position_held ?position_heldLabel WHERE {
+  ?item wdt:P39 wd:Q636207.
+  OPTIONAL { ?item wdt:P569 ?date_of_birth. }
+  OPTIONAL { ?item wdt:P21 ?sex_or_gender. }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+  OPTIONAL { ?item wdt:P106 ?occupation. }
+  OPTIONAL { ?item wdt:P69 ?educated_at. }
+  OPTIONAL { ?item wdt:P512 ?academic_degree. }
+  OPTIONAL { ?item wdt:P39 ?position_held. }
+
+}
